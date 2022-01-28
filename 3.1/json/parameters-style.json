@@ -3,14 +3,7 @@
   "info": {
     "title": "Support for parameter serialization",
     "description": "https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#style-values",
-    "version": "1.0.0",
-    "contact": {
-      "email": "aaron@readme.io"
-    },
-    "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-    }
+    "version": "1.0.0"
   },
   "servers": [
     {
@@ -20,23 +13,23 @@
   "tags": [
     {
       "name": "Cookie",
-      "description": "Showcasing our handling of `style` on cookie parameters."
+      "description": "Showcasing handling of `style` on cookie parameters."
     },
     {
       "name": "Header",
-      "description": "Showcasing our handling of `style` on header parameters."
+      "description": "Showcasing handling of `style` on header parameters."
     },
     {
       "name": "Path",
-      "description": "Showcasing our handling of `style` on path parameters."
+      "description": "Showcasing handling of `style` on path parameters."
     },
     {
       "name": "Query",
-      "description": "Showcasing our handling of `style` on query parameters."
+      "description": "Showcasing handling of `style` on query parameters."
     },
     {
       "name": "multipart/form-data Encoding",
-      "description": "Showcasing our handling of `encoding` and `style` on `multipart/form-data` requests."
+      "description": "Showcasing handling of `encoding` and `style` on `multipart/form-data` requests."
     }
   ],
   "paths": {
@@ -105,7 +98,7 @@
           {
             "name": "array",
             "in": "cookie",
-            "description": "A `form` style, non-exploded array.\n\n> We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.",
+            "description": "A `form` style, non-exploded array.\n\n> It's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.",
             "style": "form",
             "explode": false,
             "schema": {
@@ -118,7 +111,7 @@
           {
             "name": "object",
             "in": "cookie",
-            "description": "A `form` style, non-exploded object\n\n> We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.",
+            "description": "A `form` style, non-exploded object\n\n> It's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.",
             "style": "form",
             "explode": false,
             "schema": {
@@ -156,7 +149,7 @@
           {
             "name": "array",
             "in": "cookie",
-            "description": "A `form` style, exploded array.\n\n> We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.",
+            "description": "A `form` style, exploded array.\n\n> It's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -169,7 +162,7 @@
           {
             "name": "object",
             "in": "cookie",
-            "description": "A `form` style, exploded object.\n\n> We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.",
+            "description": "A `form` style, exploded object.\n\n> It's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -866,7 +859,7 @@
           {
             "name": "object",
             "in": "query",
-            "description": "A `spaceDelimited` style, non-exploded array.\n\n>⚠️ This is currently unsupported.",
+            "description": "A `spaceDelimited` style, non-exploded array.",
             "style": "spaceDelimited",
             "explode": false,
             "schema": {
@@ -907,7 +900,7 @@
           {
             "name": "object",
             "in": "query",
-            "description": "A `pipeDelimited` style, non-exploded object.\n\n>⚠️ This is currently unsupported.",
+            "description": "A `pipeDelimited` style, non-exploded object.",
             "style": "pipeDelimited",
             "explode": false,
             "schema": {
@@ -1125,7 +1118,7 @@
                     }
                   },
                   "object": {
-                    "description": "A `spaceDelimited` style, non-exploded object.\n\n>⚠️ This is currently unsupported.",
+                    "description": "A `spaceDelimited` style, non-exploded object.",
                     "type": "object",
                     "properties": {
                       "foo": {
@@ -1177,7 +1170,7 @@
                     }
                   },
                   "object": {
-                    "description": "A `pipeDelimited` style, non-exploded object.\n\n>⚠️ This is currently unsupported.",
+                    "description": "A `pipeDelimited` style, non-exploded object.",
                     "type": "object",
                     "properties": {
                       "foo": {

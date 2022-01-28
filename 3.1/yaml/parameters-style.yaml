@@ -3,24 +3,19 @@ info:
   title: Support for parameter serialization
   description: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#style-values
   version: 1.0.0
-  contact:
-    email: aaron@readme.io
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
 servers:
   - url: https://httpbin.org
 tags:
   - name: Cookie
-    description: Showcasing our handling of `style` on cookie parameters.
+    description: Showcasing handling of `style` on cookie parameters.
   - name: Header
-    description: Showcasing our handling of `style` on header parameters.
+    description: Showcasing handling of `style` on header parameters.
   - name: Path
-    description: Showcasing our handling of `style` on path parameters.
+    description: Showcasing handling of `style` on path parameters.
   - name: Query
-    description: Showcasing our handling of `style` on query parameters.
+    description: Showcasing handling of `style` on query parameters.
   - name: multipart/form-data Encoding
-    description: Showcasing our handling of `encoding` and `style` on `multipart/form-data`
+    description: Showcasing handling of `encoding` and `style` on `multipart/form-data`
       requests.
 paths:
   '/cookies':
@@ -84,7 +79,7 @@ paths:
           description: |-
             A `form` style, non-exploded array.
 
-            > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
+            > It's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
           style: form
           explode: false
           schema:
@@ -96,7 +91,7 @@ paths:
           description: |-
             A `form` style, non-exploded object
 
-            > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
+            > It's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
           style: form
           explode: false
           schema:
@@ -132,7 +127,7 @@ paths:
           description: |-
             A `form` style, exploded array.
 
-            > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
+            > It's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
           style: form
           explode: true
           schema:
@@ -144,7 +139,7 @@ paths:
           description: |-
             A `form` style, exploded object.
 
-            > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
+            > It's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
           style: form
           explode: true
           schema:
@@ -681,10 +676,7 @@ paths:
               type: string
         - name: object
           in: query
-          description: |-
-            A `spaceDelimited` style, non-exploded array.
-
-            >⚠️ This is currently unsupported.
+          description: A `spaceDelimited` style, non-exploded array.
           style: spaceDelimited
           explode: false
           schema:
@@ -716,10 +708,7 @@ paths:
               type: string
         - name: object
           in: query
-          description: |-
-            A `pipeDelimited` style, non-exploded object.
-
-            >⚠️ This is currently unsupported.
+          description: A `pipeDelimited` style, non-exploded object.
           style: pipeDelimited
           explode: false
           schema:
@@ -889,10 +878,7 @@ paths:
                   items:
                     type: string
                 object:
-                  description: |-
-                    A `spaceDelimited` style, non-exploded object.
-
-                    >⚠️ This is currently unsupported.
+                  description: A `spaceDelimited` style, non-exploded object.
                   type: object
                   properties:
                     foo:
@@ -931,10 +917,7 @@ paths:
                   items:
                     type: string
                 object:
-                  description: |-
-                    A `pipeDelimited` style, non-exploded object.
-
-                    >⚠️ This is currently unsupported.
+                  description: A `pipeDelimited` style, non-exploded object.
                   type: object
                   properties:
                     foo:
