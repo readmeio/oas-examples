@@ -7,29 +7,29 @@ info:
     https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#schemaObject
   version: 1.0.0
 servers:
-- url: https://httpbin.org
+  - url: https://httpbin.org
 tags:
-- name: Strings
-  description: 'Showcasing our handling and support for `type: string` schemas.'
-- name: Numbers
-  description: 'Showcasing our handling and support for `type: integer` and `type:
-    number` schemas.'
-- name: Booleans
-  description: 'Showcasing our handling and support for `type: boolean` schemas.'
-- name: Arrays
-  description: 'Showcasing our handling and support for `type: array` schemas.'
-- name: Objects
-  description: 'Showcasing our handling and support for `type: object` schemas.'
-- name: Circular references
-  description: Showcasing our handling and support for circular references (`$ref`
-    pointers).
-- name: ReadMe-flavors
-  description: Showcasing our handling and support for various ReadMe-flavored schema
-    additions.
-- name: Quirks
-  description: Showcasing our handling and support for various schema type quirks.
+  - name: Strings
+    description: 'Showcasing our handling and support for `type: string` schemas.'
+  - name: Numbers
+    description: 'Showcasing our handling and support for `type: integer` and `type:
+      number` schemas.'
+  - name: Booleans
+    description: 'Showcasing our handling and support for `type: boolean` schemas.'
+  - name: Arrays
+    description: 'Showcasing our handling and support for `type: array` schemas.'
+  - name: Objects
+    description: 'Showcasing our handling and support for `type: object` schemas.'
+  - name: Circular references
+    description: Showcasing our handling and support for circular references (`$ref`
+      pointers).
+  - name: ReadMe-flavors
+    description: Showcasing our handling and support for various ReadMe-flavored schema
+      additions.
+  - name: Quirks
+    description: Showcasing our handling and support for various schema type quirks.
 paths:
-  "/anything/strings":
+  '/anything/strings':
     post:
       operationId: string_schemaSupport
       summary: String support
@@ -37,7 +37,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Strings
+        - Strings
       requestBody:
         content:
           application/json:
@@ -67,46 +67,46 @@ paths:
                 enum:
                   type: string
                   enum:
-                  - available
-                  - pending
-                  - sold
+                    - available
+                    - pending
+                    - sold
                 enum (with default):
                   type: string
                   description: This enum has a `default` of `available`.
                   enum:
-                  - available
-                  - pending
-                  - sold
+                    - available
+                    - pending
+                    - sold
                   default: available
                 enum (with empty option):
                   type: string
                   description: This enum has a an empty string (`""`) as one of its
                     available options.
                   enum:
-                  - ''
-                  - available
-                  - pending
-                  - sold
+                    - ''
+                    - available
+                    - pending
+                    - sold
                 enum (with empty option and empty default):
                   type: string
                   description: This enum has a an empty string (`""`) as its only
                     available option, and that same value is set as its `default`.
                   enum:
-                  - ''
+                    - ''
                   default: ''
               required:
-              - required
+                - required
       responses:
         '200':
           description: OK
     put:
       operationId: string_formatSupport
-      summary: "`format` data types"
+      summary: '`format` data types'
       description: "Handling of `format` data types on `type: string` schemas.\n\n\U0001F4DA
         OpenAPI specification references:\n\n* [3.0.3 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types)\n\n*
         [3.1.0 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#dataTypes)"
       tags:
-      - Strings
+        - Strings
       requestBody:
         content:
           application/json:
@@ -172,7 +172,7 @@ paths:
       responses:
         '200':
           description: OK
-  "/anything/strings/top-level-payloads":
+  '/anything/strings/top-level-payloads':
     post:
       operationId: string_topLevel
       summary: Top-level payloads
@@ -180,7 +180,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types)\n\n*
         [3.1.0 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#dataTypes)"
       tags:
-      - Strings
+        - Strings
       requestBody:
         content:
           application/json:
@@ -197,7 +197,7 @@ paths:
         Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types)\n\n*
         [3.1.0 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#dataTypes)"
       tags:
-      - Strings
+        - Strings
       requestBody:
         content:
           application/json:
@@ -207,7 +207,7 @@ paths:
       responses:
         '200':
           description: OK
-  "/anything/numbers":
+  '/anything/numbers':
     post:
       operationId: number_schemaSupport
       summary: Number support
@@ -215,7 +215,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Numbers
+        - Numbers
       requestBody:
         content:
           application/json:
@@ -269,20 +269,20 @@ paths:
                   description: This number has a `default` of `null`.
                   default:
               required:
-              - integer (required)
-              - number (required)
+                - integer (required)
+                - number (required)
       responses:
         '200':
           description: OK
     put:
       operationId: number_formatSupport
-      summary: "`format` data types"
+      summary: '`format` data types'
       description: "Handling `format` data types on `type: integer` and `type: number`
         schemas.\n\n\U0001F4DA OpenAPI specification references:\n\n* [3.0.3 Data
         Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types)\n\n*
         [3.1.0 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#dataTypes)"
       tags:
-      - Numbers
+        - Numbers
       requestBody:
         content:
           application/json:
@@ -335,7 +335,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types)\n\n*
         [3.1.0 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#dataTypes)"
       tags:
-      - Numbers
+        - Numbers
       requestBody:
         content:
           application/json:
@@ -345,7 +345,7 @@ paths:
       responses:
         '200':
           description: OK
-  "/anything/booleans":
+  '/anything/booleans':
     post:
       operationId: boolean_schemaSupport
       summary: Boolean support
@@ -353,7 +353,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Booleans
+        - Booleans
       requestBody:
         content:
           application/json:
@@ -381,10 +381,10 @@ paths:
                     be treated as `boolean` because it contains an enum of `true`
                     and `false`.
                   enum:
-                  - true
-                  - false
+                    - true
+                    - false
               required:
-              - required
+                - required
       responses:
         '200':
           description: OK
@@ -395,7 +395,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types)\n\n*
         [3.1.0 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#dataTypes)"
       tags:
-      - Booleans
+        - Booleans
       requestBody:
         content:
           application/json:
@@ -404,7 +404,7 @@ paths:
       responses:
         '200':
           description: OK
-  "/anything/arrays":
+  '/anything/arrays':
     post:
       operationId: array_schemaSupport
       summary: Array support
@@ -412,7 +412,7 @@ paths:
         specification references:\n\n* [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Arrays
+        - Arrays
       requestBody:
         content:
           application/json:
@@ -452,7 +452,7 @@ paths:
                 array<string> (loaded via a $ref):
                   type: array
                   items:
-                    "$ref": "#/components/schemas/string_enum"
+                    '$ref': '#/components/schemas/string_enum'
                 array<integer>:
                   type: array
                   items:
@@ -497,7 +497,7 @@ paths:
       responses:
         '200':
           description: OK
-  "/anything/arrays/top-level-payloads":
+  '/anything/arrays/top-level-payloads':
     post:
       operationId: array_topLevelObjects
       summary: Top-level payloads (objects)
@@ -506,7 +506,7 @@ paths:
         Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types)\n\n*
         [3.1.0 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#dataTypes)"
       tags:
-      - Arrays
+        - Arrays
       requestBody:
         content:
           application/json:
@@ -540,7 +540,7 @@ paths:
         Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#data-types)\n\n*
         [3.1.0 Data Types](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#dataTypes)"
       tags:
-      - Arrays
+        - Arrays
       requestBody:
         content:
           application/json:
@@ -551,7 +551,7 @@ paths:
       responses:
         '200':
           description: OK
-  "/anything/objects":
+  '/anything/objects':
     post:
       operationId: object_schemSupport
       summary: Object support
@@ -559,7 +559,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Objects
+        - Objects
       requestBody:
         content:
           application/json:
@@ -625,7 +625,7 @@ paths:
       responses:
         '200':
           description: OK
-  "/anything/circular":
+  '/anything/circular':
     post:
       operationId: circular_handling
       summary: Nested circular $ref
@@ -633,7 +633,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Reference Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#referenceObject)\n\n*
         [3.1.0 Reference Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#referenceObject)"
       tags:
-      - Circular references
+        - Circular references
       requestBody:
         content:
           application/json:
@@ -641,7 +641,7 @@ paths:
               type: object
               properties:
                 circular:
-                  "$ref": "#/components/schemas/Circular"
+                  '$ref': '#/components/schemas/Circular'
       responses:
         '200':
           description: OK
@@ -653,16 +653,16 @@ paths:
         Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#referenceObject)\n\n*
         [3.1.0 Reference Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#referenceObject)"
       tags:
-      - Circular references
+        - Circular references
       requestBody:
         content:
           application/json:
             schema:
-              "$ref": "#/components/schemas/Circular"
+              '$ref': '#/components/schemas/Circular'
       responses:
         '200':
           description: OK
-  "/anything/raw_body/top-level-payloads":
+  '/anything/raw_body/top-level-payloads':
     post:
       operationId: raw_body_topLevel
       summary: Top-level RAW_BODY (string)
@@ -671,7 +671,7 @@ paths:
 
         <https://docs.readme.com/docs/raw-body-content>
       tags:
-      - ReadMe-flavors
+        - ReadMe-flavors
       requestBody:
         content:
           application/json:
@@ -691,7 +691,7 @@ paths:
 
         <https://docs.readme.com/docs/raw-body-content>
       tags:
-      - ReadMe-flavors
+        - ReadMe-flavors
       requestBody:
         content:
           application/json:
@@ -704,7 +704,7 @@ paths:
       responses:
         '200':
           description: OK
-  "/anything/quirks":
+  '/anything/quirks':
     post:
       operationId: quirks_missingType
       summary: Missing schema type
@@ -712,7 +712,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Quirks
+        - Quirks
       requestBody:
         content:
           application/json:
@@ -726,15 +726,15 @@ paths:
                   default: default value
                 missing type (on completely empty schema): {}
                 implicit array:
-                  description: 'This array property is missing an explicit `type:
-                    array` but since it has an `items` declaration we''re implicitly
-                    treating it as an array.'
+                  description: "This array property is missing an explicit `type:
+                    array` but since it has an `items` declaration we're implicitly
+                    treating it as an array."
                   items:
                     type: integer
                 implicit object:
-                  description: 'This object property is missing an explicit `type:
-                    object` but since it has an `properties` declaration we''re implicitly
-                    treating it as an object.'
+                  description: "This object property is missing an explicit `type:
+                    object` but since it has an `properties` declaration we're implicitly
+                    treating it as an object."
                   properties:
                     name:
                       type: string
@@ -746,7 +746,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Quirks
+        - Quirks
       requestBody:
         content:
           application/json:
@@ -758,7 +758,7 @@ paths:
                   description: This property has a `type` of `str` but since `str`
                     is not a valid JSON Schema type we should fallback to rendering
                     it out as a standard `string` input.
-  "/anything/quirks/polymorphism":
+  '/anything/quirks/polymorphism':
     post:
       operationId: quirks_incompatibleNestedAllOf
       summary: Incompatible nested allOf schemas
@@ -766,7 +766,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Quirks
+        - Quirks
       requestBody:
         content:
           application/json:
@@ -779,20 +779,20 @@ paths:
 
                     This is obviously less than ideal but it assures that the user can still interact with the property.
                   allOf:
-                  - type: string
-                  - type: integer
+                    - type: string
+                    - type: integer
                 compatible:
                   description: Unlike the `incompatible` property above this `allOf`
                     consists of two objects that **can** be merged.
                   allOf:
-                  - type: object
-                    properties:
-                      name:
-                        type: string
-                  - type: object
-                    properties:
-                      name:
-                        example: buster
+                    - type: object
+                      properties:
+                        name:
+                          type: string
+                    - type: object
+                      properties:
+                        name:
+                          example: buster
         required: true
     put:
       operationId: quirks_entirelyIncompatibleAllOf
@@ -803,14 +803,14 @@ paths:
         [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Quirks
+        - Quirks
       requestBody:
         content:
           application/json:
             schema:
               allOf:
-              - type: string
-              - type: integer
+                - type: string
+                - type: integer
         required: true
     patch:
       operationId: quirks_partiallyUsableIncompatibleAllOf
@@ -830,23 +830,23 @@ paths:
         references:\n\n* [3.0.3 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#schemaObject)\n\n*
         [3.1.0 Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#schemaObject)"
       tags:
-      - Quirks
+        - Quirks
       requestBody:
         content:
           application/json:
             schema:
               description: I am a description
               allOf:
-              - type: string
-              - type: integer
+                - type: string
+                - type: integer
         required: true
 components:
   schemas:
     string_enum:
       enum:
-      - available
-      - pending
-      - sold
+        - available
+        - pending
+        - sold
       type: string
     Circular:
       type: object
@@ -856,4 +856,4 @@ components:
         children:
           type: array
           items:
-            "$ref": "#/components/schemas/Circular"
+            '$ref': '#/components/schemas/Circular'

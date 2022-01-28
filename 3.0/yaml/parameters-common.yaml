@@ -4,19 +4,19 @@ info:
   description: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#path-item-object
   version: 1.0.0
 servers:
-- url: https://httpbin.org
+  - url: https://httpbin.org
 paths:
-  "/anything/{id}":
+  '/anything/{id}':
     parameters:
-    - in: path
-      name: id
-      schema:
-        type: number
-      required: true
-    - in: header
-      name: x-extra-id
-      schema:
-        type: string
+      - in: path
+        name: id
+        schema:
+          type: number
+        required: true
+      - in: header
+        name: x-extra-id
+        schema:
+          type: string
     get:
       summary: Get anything
       responses:
@@ -25,39 +25,39 @@ paths:
     post:
       summary: Post anything
       parameters:
-      - "$ref": "#/components/parameters/limitParam"
+        - '$ref': '#/components/parameters/limitParam'
       responses:
         '200':
           description: OK
-  "/anything/{id}/{multiplePathParams}":
+  '/anything/{id}/{multiplePathParams}':
     parameters:
-    - in: path
-      name: id
-      schema:
-        type: number
-      required: true
-    - in: path
-      name: multiplePathParams
-      schema:
-        type: string
-      required: true
+      - in: path
+        name: id
+        schema:
+          type: number
+        required: true
+      - in: path
+        name: multiplePathParams
+        schema:
+          type: string
+        required: true
     get:
       summary: Get anything
       responses:
         '200':
           description: OK
-  "/anything/{id}/{duplicatePathParams}/{id}":
+  '/anything/{id}/{duplicatePathParams}/{id}':
     parameters:
-    - in: path
-      name: id
-      schema:
-        type: number
-      required: true
-    - in: path
-      name: duplicatePathParams
-      schema:
-        type: string
-      required: true
+      - in: path
+        name: id
+        schema:
+          type: number
+        required: true
+      - in: path
+        name: duplicatePathParams
+        schema:
+          type: string
+        required: true
     get:
       summary: Get anything
       responses:

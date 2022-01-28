@@ -120,11 +120,7 @@
           "status": {
             "type": "string",
             "description": "An enum with available options",
-            "enum": [
-              "available",
-              "pending",
-              "sold"
-            ]
+            "enum": ["available", "pending", "sold"]
           }
         }
       }

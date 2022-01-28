@@ -84,31 +84,18 @@
                   },
                   "enum": {
                     "type": "string",
-                    "enum": [
-                      "available",
-                      "pending",
-                      "sold"
-                    ]
+                    "enum": ["available", "pending", "sold"]
                   },
                   "enum (with default)": {
                     "type": "string",
                     "description": "This enum has a `default` of `available`.",
-                    "enum": [
-                      "available",
-                      "pending",
-                      "sold"
-                    ],
+                    "enum": ["available", "pending", "sold"],
                     "default": "available"
                   },
                   "enum (with empty option)": {
                     "type": "string",
                     "description": "This enum has a an empty string (`\"\"`) as one of its available options.",
-                    "enum": [
-                      "",
-                      "available",
-                      "pending",
-                      "sold"
-                    ]
+                    "enum": ["", "available", "pending", "sold"]
                   },
                   "enum (with empty option and empty default)": {
                     "type": "string",
@@ -326,10 +313,7 @@
                     "default": null
                   }
                 },
-                "required": [
-                  "integer (required)",
-                  "number (required)"
-                ]
+                "required": ["integer (required)", "number (required)"]
               }
             }
           }
@@ -1060,11 +1044,7 @@
   "components": {
     "schemas": {
       "string_enum": {
-        "enum": [
-          "available",
-          "pending",
-          "sold"
-        ],
+        "enum": ["available", "pending", "sold"],
         "type": "string"
       },
       "Circular": {

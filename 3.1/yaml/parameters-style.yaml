@@ -1,4 +1,3 @@
----
 openapi: 3.1.0
 info:
   title: Support for parameter serialization
@@ -10,21 +9,21 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-- url: https://httpbin.org
+  - url: https://httpbin.org
 tags:
-- name: Cookie
-  description: Showcasing our handling of `style` on cookie parameters.
-- name: Header
-  description: Showcasing our handling of `style` on header parameters.
-- name: Path
-  description: Showcasing our handling of `style` on path parameters.
-- name: Query
-  description: Showcasing our handling of `style` on query parameters.
-- name: multipart/form-data Encoding
-  description: Showcasing our handling of `encoding` and `style` on `multipart/form-data`
-    requests.
+  - name: Cookie
+    description: Showcasing our handling of `style` on cookie parameters.
+  - name: Header
+    description: Showcasing our handling of `style` on header parameters.
+  - name: Path
+    description: Showcasing our handling of `style` on path parameters.
+  - name: Query
+    description: Showcasing our handling of `style` on query parameters.
+  - name: multipart/form-data Encoding
+    description: Showcasing our handling of `encoding` and `style` on `multipart/form-data`
+      requests.
 paths:
-  "/cookies":
+  '/cookies':
     get:
       operationId: cookies_standard
       summary: Standard (no style)
@@ -35,31 +34,31 @@ paths:
         cookies only will be sent if the API server URL is the same as where this
         guide is being served from."
       tags:
-      - Cookie
+        - Cookie
       parameters:
-      - name: primitive
-        in: cookie
-        description: A standard primitive.
-        schema:
-          type: string
-      - name: array
-        in: cookie
-        description: A standard array.
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: cookie
+          description: A standard primitive.
+          schema:
             type: string
-      - name: object
-        in: cookie
-        description: A standard object.
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: cookie
+          description: A standard array.
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/cookies#formNonExploded":
+        - name: object
+          in: cookie
+          description: A standard object.
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/cookies#formNonExploded':
     get:
       operationId: cookies_form_nonExploded
       summary: Form (non-exploded)
@@ -71,43 +70,43 @@ paths:
         cookies only will be sent if the API server URL is the same as where this
         guide is being served from."
       tags:
-      - Cookie
+        - Cookie
       parameters:
-      - name: primitive
-        in: cookie
-        description: A `form` style, non-exploded primitive.
-        style: form
-        explode: false
-        schema:
-          type: string
-      - name: array
-        in: cookie
-        description: |-
-          A `form` style, non-exploded array.
-
-          > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
-        style: form
-        explode: false
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: cookie
+          description: A `form` style, non-exploded primitive.
+          style: form
+          explode: false
+          schema:
             type: string
-      - name: object
-        in: cookie
-        description: |-
-          A `form` style, non-exploded object
+        - name: array
+          in: cookie
+          description: |-
+            A `form` style, non-exploded array.
 
-          > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
-        style: form
-        explode: false
-        schema:
-          type: object
-          properties:
-            name:
+            > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/cookies#formExploded":
+        - name: object
+          in: cookie
+          description: |-
+            A `form` style, non-exploded object
+
+            > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
+          style: form
+          explode: false
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/cookies#formExploded':
     get:
       operationId: cookies_form_exploded
       summary: Form (exploded)
@@ -119,43 +118,43 @@ paths:
         cookies only will be sent if the API server URL is the same as where this
         guide is being served from."
       tags:
-      - Cookie
+        - Cookie
       parameters:
-      - name: primitive
-        in: cookie
-        description: A `form` style, exploded primitive.
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: array
-        in: cookie
-        description: |-
-          A `form` style, exploded array.
-
-          > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
-        style: form
-        explode: true
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: cookie
+          description: A `form` style, exploded primitive.
+          style: form
+          explode: true
+          schema:
             type: string
-      - name: object
-        in: cookie
-        description: |-
-          A `form` style, exploded object.
+        - name: array
+          in: cookie
+          description: |-
+            A `form` style, exploded array.
 
-          > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
-        style: form
-        explode: true
-        schema:
-          type: object
-          properties:
-            name:
+            > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
+          style: form
+          explode: true
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/anything/headers":
+        - name: object
+          in: cookie
+          description: |-
+            A `form` style, exploded object.
+
+            > We encode this kind of parameter within [@readme/httpsnippet](https://npm.im/@readme/httpsnippet) but it's unclear whether this encoding is the correct behavior because the `Cookie` header deviates from all other headers.
+          style: form
+          explode: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/headers':
     get:
       operationId: headers_standard
       summary: Standard (no style)
@@ -163,34 +162,34 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Parameter Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameter-object)\n\n*
         [3.1.0 Parameter Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameterObject)"
       tags:
-      - Header
+        - Header
       parameters:
-      - name: primitive
-        in: header
-        description: A standard primitive.
-        schema:
-          type: string
-      - name: array
-        in: header
-        description: |-
-          A standard array.
-
-          > Because headers cannot be duplicated, for an array'd header parameter to be sent it **must** have a `style` property present.
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: header
+          description: A standard primitive.
+          schema:
             type: string
-      - name: object
-        in: header
-        description: A standard object.
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: header
+          description: |-
+            A standard array.
+
+            > Because headers cannot be duplicated, for an array'd header parameter to be sent it **must** have a `style` property present.
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/anything/headers/simple":
+        - name: object
+          in: header
+          description: A standard object.
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/headers/simple':
     get:
       operationId: headers_simple_nonExploded
       summary: Simple (non-exploded)
@@ -199,36 +198,36 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Header
+        - Header
       parameters:
-      - name: primitive
-        in: header
-        description: A `simple` style, non-exploded primitive.
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: array
-        in: header
-        description: A `simple` style, non-exploded array.
-        style: simple
-        explode: false
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: header
+          description: A `simple` style, non-exploded primitive.
+          style: simple
+          explode: false
+          schema:
             type: string
-      - name: object
-        in: header
-        description: A `simple` style, non-exploded object.
-        style: simple
-        explode: false
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: header
+          description: A `simple` style, non-exploded array.
+          style: simple
+          explode: false
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
+        - name: object
+          in: header
+          description: A `simple` style, non-exploded object.
+          style: simple
+          explode: false
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
     post:
       operationId: headers_simple_exploded
       summary: Simple (exploded)
@@ -237,37 +236,37 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Header
+        - Header
       parameters:
-      - name: primitive
-        in: header
-        description: A `simple` style, exploded primitive.
-        style: simple
-        explode: true
-        schema:
-          type: string
-      - name: array
-        in: header
-        description: A `simple` style, exploded array.
-        style: simple
-        explode: true
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: header
+          description: A `simple` style, exploded primitive.
+          style: simple
+          explode: true
+          schema:
             type: string
-      - name: object
-        in: header
-        description: A `simple` style, exploded object.
-        style: simple
-        explode: true
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: header
+          description: A `simple` style, exploded array.
+          style: simple
+          explode: true
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/anything/path/{primitive}/{array}/{object}":
+        - name: object
+          in: header
+          description: A `simple` style, exploded object.
+          style: simple
+          explode: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/path/{primitive}/{array}/{object}':
     get:
       operationId: paths_standard
       summary: Standard (no style)
@@ -275,34 +274,34 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Parameter Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameter-object)\n\n*
         [3.1.0 Parameter Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameterObject)"
       tags:
-      - Path
+        - Path
       parameters:
-      - name: primitive
-        in: path
-        description: A standard primitive.
-        required: true
-        schema:
-          type: string
-      - name: array
-        in: path
-        description: A standard array.
-        required: true
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: path
+          description: A standard primitive.
+          required: true
+          schema:
             type: string
-      - name: object
-        in: path
-        description: A standard object.
-        required: true
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: path
+          description: A standard array.
+          required: true
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/anything/path/matrix/{primitive}/{array}/{object}":
+        - name: object
+          in: path
+          description: A standard object.
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/path/matrix/{primitive}/{array}/{object}':
     get:
       operationId: paths_matrix_nonExploded
       summary: Matrix (non-exploded)
@@ -311,39 +310,39 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Path
+        - Path
       parameters:
-      - name: primitive
-        in: path
-        description: A `matrix` style, non-exploded primitive.
-        required: true
-        style: matrix
-        explode: false
-        schema:
-          type: string
-      - name: array
-        in: path
-        description: A `matrix` style, non-exploded array.
-        required: true
-        style: matrix
-        explode: false
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: path
+          description: A `matrix` style, non-exploded primitive.
+          required: true
+          style: matrix
+          explode: false
+          schema:
             type: string
-      - name: object
-        in: path
-        description: A `matrix` style, non-exploded object.
-        required: true
-        style: matrix
-        explode: false
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: path
+          description: A `matrix` style, non-exploded array.
+          required: true
+          style: matrix
+          explode: false
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
+        - name: object
+          in: path
+          description: A `matrix` style, non-exploded object.
+          required: true
+          style: matrix
+          explode: false
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
     post:
       operationId: paths_matrix_exploded
       summary: Matrix (exploded)
@@ -352,40 +351,40 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Path
+        - Path
       parameters:
-      - name: primitive
-        in: path
-        description: A `matrix` style, exploded primitive.
-        required: true
-        style: matrix
-        explode: true
-        schema:
-          type: string
-      - name: array
-        in: path
-        description: A `matrix` style, exploded array.
-        required: true
-        style: matrix
-        explode: true
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: path
+          description: A `matrix` style, exploded primitive.
+          required: true
+          style: matrix
+          explode: true
+          schema:
             type: string
-      - name: object
-        in: path
-        description: A `matrix` style, exploded object.
-        required: true
-        style: matrix
-        explode: true
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: path
+          description: A `matrix` style, exploded array.
+          required: true
+          style: matrix
+          explode: true
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/anything/path/label/{primitive}/{array}/{object}":
+        - name: object
+          in: path
+          description: A `matrix` style, exploded object.
+          required: true
+          style: matrix
+          explode: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/path/label/{primitive}/{array}/{object}':
     get:
       operationId: paths_label_nonExploded
       summary: Label (non-exploded)
@@ -394,39 +393,39 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Path
+        - Path
       parameters:
-      - name: primitive
-        in: path
-        description: A `label` style, non-exploded primitive.
-        required: true
-        style: label
-        explode: false
-        schema:
-          type: string
-      - name: array
-        in: path
-        description: A `label` style, non-exploded array.
-        required: true
-        style: label
-        explode: false
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: path
+          description: A `label` style, non-exploded primitive.
+          required: true
+          style: label
+          explode: false
+          schema:
             type: string
-      - name: object
-        in: path
-        description: A `label` style, non-exploded object.
-        required: true
-        style: label
-        explode: false
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: path
+          description: A `label` style, non-exploded array.
+          required: true
+          style: label
+          explode: false
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
+        - name: object
+          in: path
+          description: A `label` style, non-exploded object.
+          required: true
+          style: label
+          explode: false
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
     post:
       operationId: paths_label_exploded
       summary: Label (exploded)
@@ -435,40 +434,40 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Path
+        - Path
       parameters:
-      - name: primitive
-        in: path
-        description: A `label` style, exploded primitive.
-        required: true
-        style: label
-        explode: true
-        schema:
-          type: string
-      - name: array
-        in: path
-        description: A `label` style, exploded array.
-        required: true
-        style: label
-        explode: true
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: path
+          description: A `label` style, exploded primitive.
+          required: true
+          style: label
+          explode: true
+          schema:
             type: string
-      - name: object
-        in: path
-        description: A `label` style, exploded object.
-        required: true
-        style: label
-        explode: true
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: path
+          description: A `label` style, exploded array.
+          required: true
+          style: label
+          explode: true
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/anything/path/simple/{primitive}/{array}/{object}":
+        - name: object
+          in: path
+          description: A `label` style, exploded object.
+          required: true
+          style: label
+          explode: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/path/simple/{primitive}/{array}/{object}':
     get:
       operationId: paths_simple_nonExploded
       summary: Simple (non-exploded)
@@ -477,39 +476,39 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Path
+        - Path
       parameters:
-      - name: primitive
-        in: path
-        description: A `simple` style, non-exploded primitive.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: array
-        in: path
-        description: A `simple` style, non-exploded array.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: path
+          description: A `simple` style, non-exploded primitive.
+          required: true
+          style: simple
+          explode: false
+          schema:
             type: string
-      - name: object
-        in: path
-        description: A `simple` style, non-exploded object.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: path
+          description: A `simple` style, non-exploded array.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
+        - name: object
+          in: path
+          description: A `simple` style, non-exploded object.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
     post:
       operationId: paths_simple_exploded
       summary: Simple (exploded)
@@ -518,40 +517,40 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Path
+        - Path
       parameters:
-      - name: primitive
-        in: path
-        description: A `simple` style, exploded primitive.
-        required: true
-        style: simple
-        explode: true
-        schema:
-          type: string
-      - name: array
-        in: path
-        description: A `simple` style, exploded array.
-        required: true
-        style: simple
-        explode: true
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: path
+          description: A `simple` style, exploded primitive.
+          required: true
+          style: simple
+          explode: true
+          schema:
             type: string
-      - name: object
-        in: path
-        description: A `simple` style, exploded object.
-        required: true
-        style: simple
-        explode: true
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: path
+          description: A `simple` style, exploded array.
+          required: true
+          style: simple
+          explode: true
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/anything/query":
+        - name: object
+          in: path
+          description: A `simple` style, exploded object.
+          required: true
+          style: simple
+          explode: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/query':
     get:
       operationId: query_standard
       summary: Standard (no style)
@@ -559,31 +558,31 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Parameter Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#parameter-object)\n\n*
         [3.1.0 Parameter Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#parameterObject)"
       tags:
-      - Query
+        - Query
       parameters:
-      - name: primitive
-        in: query
-        description: A standard primitive.
-        schema:
-          type: string
-      - name: array
-        in: query
-        description: A standard array.
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: query
+          description: A standard primitive.
+          schema:
             type: string
-      - name: object
-        in: query
-        description: A standard object.
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: query
+          description: A standard array.
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/anything/query/form":
+        - name: object
+          in: query
+          description: A standard object.
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/query/form':
     get:
       operationId: query_form_nonExploded
       summary: Form (non-exploded)
@@ -592,36 +591,36 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Query
+        - Query
       parameters:
-      - name: primitive
-        in: query
-        description: A `form` style, non-exploded primitive.
-        style: form
-        explode: false
-        schema:
-          type: string
-      - name: array
-        in: query
-        description: A `form` style, non-exploded array.
-        style: form
-        explode: false
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: query
+          description: A `form` style, non-exploded primitive.
+          style: form
+          explode: false
+          schema:
             type: string
-      - name: object
-        in: query
-        description: A `form` style, non-exploded object.
-        style: form
-        explode: false
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: query
+          description: A `form` style, non-exploded array.
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
+        - name: object
+          in: query
+          description: A `form` style, non-exploded object.
+          style: form
+          explode: false
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
     post:
       operationId: query_form_exploded
       summary: Form (exploded)
@@ -630,37 +629,37 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Query
+        - Query
       parameters:
-      - name: primitive
-        in: query
-        description: A `form` style, exploded primitive.
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: array
-        in: query
-        description: A `form` style, exploded array.
-        style: form
-        explode: true
-        schema:
-          type: array
-          items:
+        - name: primitive
+          in: query
+          description: A `form` style, exploded primitive.
+          style: form
+          explode: true
+          schema:
             type: string
-      - name: object
-        in: query
-        description: A `form` style, exploded object.
-        style: form
-        explode: true
-        schema:
-          type: object
-          properties:
-            name:
+        - name: array
+          in: query
+          description: A `form` style, exploded array.
+          style: form
+          explode: true
+          schema:
+            type: array
+            items:
               type: string
-            description:
-              type: string
-  "/anything/query/spaceDelimited":
+        - name: object
+          in: query
+          description: A `form` style, exploded object.
+          style: form
+          explode: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/query/spaceDelimited':
     get:
       operationId: query_spaceDelimited_nonExploded
       summary: spaceDelimited (non-exploded)
@@ -669,33 +668,33 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Query
+        - Query
       parameters:
-      - name: array
-        in: query
-        description: A `spaceDelimited` style, non-exploded primitive.
-        style: spaceDelimited
-        explode: false
-        schema:
-          type: array
-          items:
-            type: string
-      - name: object
-        in: query
-        description: |-
-          A `spaceDelimited` style, non-exploded array.
+        - name: array
+          in: query
+          description: A `spaceDelimited` style, non-exploded primitive.
+          style: spaceDelimited
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: object
+          in: query
+          description: |-
+            A `spaceDelimited` style, non-exploded array.
 
-          >⚠️ This is currently unsupported.
-        style: spaceDelimited
-        explode: false
-        schema:
-          type: object
-          properties:
-            name:
-              type: string
-            description:
-              type: string
-  "/anything/query/pipeDelimited":
+            >⚠️ This is currently unsupported.
+          style: spaceDelimited
+          explode: false
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/query/pipeDelimited':
     get:
       operationId: query_pipeDelimited_nonExploded
       summary: pipeDelimited (non-exploded)
@@ -704,33 +703,33 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Query
+        - Query
       parameters:
-      - name: array
-        in: query
-        description: A `pipeDelimited` style, non-exploded primitive.
-        style: pipeDelimited
-        explode: false
-        schema:
-          type: array
-          items:
-            type: string
-      - name: object
-        in: query
-        description: |-
-          A `pipeDelimited` style, non-exploded object.
+        - name: array
+          in: query
+          description: A `pipeDelimited` style, non-exploded primitive.
+          style: pipeDelimited
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: object
+          in: query
+          description: |-
+            A `pipeDelimited` style, non-exploded object.
 
-          >⚠️ This is currently unsupported.
-        style: pipeDelimited
-        explode: false
-        schema:
-          type: object
-          properties:
-            name:
-              type: string
-            description:
-              type: string
-  "/anything/query/deepObject":
+            >⚠️ This is currently unsupported.
+          style: pipeDelimited
+          explode: false
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/query/deepObject':
     get:
       operationId: query_deepObject_nonExploded
       summary: deepObject (exploded)
@@ -739,21 +738,21 @@ paths:
         [3.0.3 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#style-values)\n\n*
         [3.1.0 Parameter Serialization](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#style-values)"
       tags:
-      - Query
+        - Query
       parameters:
-      - name: object
-        in: query
-        description: A `deepObject` style, exploded object.
-        style: deepObject
-        explode: true
-        schema:
-          type: object
-          properties:
-            name:
-              type: string
-            description:
-              type: string
-  "/anything/form-data":
+        - name: object
+          in: query
+          description: A `deepObject` style, exploded object.
+          style: deepObject
+          explode: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+  '/anything/form-data':
     post:
       operationId: formData_standard
       summary: Standard (no encoding)
@@ -762,7 +761,7 @@ paths:
         [3.0.3 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#encodingObject)\n\n*
         [3.1.0 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#encodingObject)"
       tags:
-      - multipart/form-data Encoding
+        - multipart/form-data Encoding
       requestBody:
         content:
           multipart/form-data:
@@ -785,7 +784,7 @@ paths:
                       type: string
                     bar:
                       type: string
-  "/anything/form-data/form":
+  '/anything/form-data/form':
     post:
       operationId: formData_form_nonExploded
       summary: Form (non-exploded)
@@ -794,7 +793,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#encodingObject)\n\n*
         [3.1.0 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#encodingObject)"
       tags:
-      - multipart/form-data Encoding
+        - multipart/form-data Encoding
       requestBody:
         content:
           multipart/form-data:
@@ -835,7 +834,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#encodingObject)\n\n*
         [3.1.0 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#encodingObject)"
       tags:
-      - multipart/form-data Encoding
+        - multipart/form-data Encoding
       requestBody:
         content:
           multipart/form-data:
@@ -868,7 +867,7 @@ paths:
               object:
                 style: form
                 explode: true
-  "/anything/form-data/spaceDelimited":
+  '/anything/form-data/spaceDelimited':
     get:
       operationId: formData_spaceDelimited_nonExploded
       summary: spaceDelimited (non-exploded)
@@ -877,7 +876,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#encodingObject)\n\n*
         [3.1.0 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#encodingObject)"
       tags:
-      - multipart/form-data Encoding
+        - multipart/form-data Encoding
       requestBody:
         content:
           multipart/form-data:
@@ -910,7 +909,7 @@ paths:
               object:
                 style: spaceDelimited
                 explode: false
-  "/anything/form-data/pipeDelimited":
+  '/anything/form-data/pipeDelimited':
     get:
       operationId: form_data_pipeDelimited_nonExploded
       summary: pipeDelimited (non-exploded)
@@ -919,7 +918,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#encodingObject)\n\n*
         [3.1.0 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#encodingObject)"
       tags:
-      - multipart/form-data Encoding
+        - multipart/form-data Encoding
       requestBody:
         content:
           multipart/form-data:
@@ -952,7 +951,7 @@ paths:
               object:
                 style: pipeDelimited
                 explode: false
-  "/anything/form-data/deepObject":
+  '/anything/form-data/deepObject':
     get:
       operationId: form_data_deepObject_exploded
       summary: deepObject (exploded)
@@ -961,7 +960,7 @@ paths:
         OpenAPI specification references:\n\n* [3.0.3 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#encodingObject)\n\n*
         [3.1.0 Encoding Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#encodingObject)"
       tags:
-      - multipart/form-data Encoding
+        - multipart/form-data Encoding
       requestBody:
         content:
           multipart/form-data:
