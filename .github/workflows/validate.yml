@@ -1,7 +1,7 @@
 # This is an example workflow that validates the `petstore` OpenAPI definitions via the `rdme` GitHub Action
 # Petstore docs on ReadMe: https://petstore.readme.io
 # `rdme` docs: https://docs.readme.com/docs/rdme
-name: 'Validate Petstore 🐶'
+name: 'Validate Petstore Files 🐶'
 
 # This workflow any time there is a push to the GitHub repository
 # See GitHub's docs for all the possible event types:
@@ -10,7 +10,6 @@ on: push
 
 jobs:
   validate:
-    name: Validate petstore files
     runs-on: ubuntu-latest
 
     steps:
