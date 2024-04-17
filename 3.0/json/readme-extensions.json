@@ -45,7 +45,23 @@
         "tags": ["Custom code samples"],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "TestExample": {
+                    "summary": "An example of a cat",
+                    "value": {
+                      "name": "Fluffy",
+                      "petType": "Cat",
+                      "color": "White",
+                      "gender": "male",
+                      "breed": "Persian"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "x-readme": {
@@ -54,13 +70,21 @@
               "name": "Custom cURL snippet",
               "language": "curl",
               "code": "curl -X POST https://api.example.com/v2/alert",
+              "install": "brew install curl",
+              "correspondingExample": "TestExample"
+            },
+            {
+              "name": "Another cURL snippet",
+              "language": "curl",
+              "code": "curl -X POST https://api.example.com/v2/another-alert",
               "install": "brew install curl"
             },
             {
               "language": "curl",
               "code": "# This custom cURL snippet does not have a custom name so it has the name of \"Default #2\".\n\ncurl -X POST https://api.example.com/v2/alert"
             }
-          ]
+          ],
+          "samples-languages": ["shell"]
         }
       },
       "get": {
