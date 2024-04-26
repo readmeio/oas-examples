@@ -723,6 +723,68 @@
           }
         }
       }
+    },
+    "/requestBody-form-data-example": {
+      "post": {
+        "summary": "Demo handling of formData",
+        "operationId": "demoFormData",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": ["client_id", "client_secret"],
+                "type": "object",
+                "properties": {
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "type": "string"
+                  },
+                  "scope": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "examples": {
+                "auth_example": {
+                  "value": {
+                    "client_id": "id123",
+                    "client_secret": "secret456",
+                    "scope": 789
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Valid Token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Token"
+                },
+                "examples": {
+                  "auth_example": {
+                    "value": {
+                      "access_token": 123,
+                      "token_type": "type456",
+                      "expires_in": 789
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -763,6 +825,24 @@
           },
           "name": {
             "type": "string"
+          }
+        }
+      },
+      "Token": {
+        "title": "Token",
+        "required": ["access_token", "token_type", "expires_in"],
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "token_type": {
+            "type": "string"
+          },
+          "expires_in": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
