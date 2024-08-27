@@ -189,7 +189,7 @@ paths:
       responses:
         '200':
           description: OK
-  '/redocly-discriminator-madness':
+  '/redocly-flavored-discriminator':
     patch:
       operationId: redoclyQuirk
       summary: Discriminator without `anyOf` or `oneOf` that Redocly supports
